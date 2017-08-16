@@ -1,0 +1,106 @@
+/**
+ * 定义动画
+ */
+@mixin keyframes($animationName) {
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+    @-o-keyframes #{$animationName} {
+        @content;
+    }
+    @keyframes #{$animationName} {
+        @content;
+    }
+}
+
+/**
+ * 使用动画
+ */
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};
+}
+
+@mixin animationDelay($str) {
+  -webkit-animation-delay: #{$str};
+  -moz-animation-delay: #{$str};
+  -ms-animation-delay: #{$str};
+  -o-animation-delay: #{$str};
+  animation-delay: #{$str};
+}
+/**
+ * 定义过滤
+ */
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+/**
+ * 定义变换
+ */
+@mixin transform($transforms) {
+   -moz-transform: $transforms;
+   -o-transform: $transforms;
+   -ms-transform: $transforms;
+   -webkit-transform: $transforms;
+   transform: $transforms;
+}
+//旋转
+@mixin rotate ($deg) {
+  @include transform(rotate(#{$deg}deg));
+}
+//缩放
+@mixin scale($scale) {
+  @include transform(scale($scale));
+}
+//平移
+@mixin translate ($x, $y) {
+  @include transform(translate($x, $y));
+}
+//倾斜
+@mixin skew ($x, $y) {
+  @include transform(skew(#{$x}deg, #{$y}deg));
+}
+//元素基点
+@mixin transform-origin ($origin) {
+  moz-transform-origin: $origin;
+  -o-transform-origin: $origin;
+  -ms-transform-origin: $origin;
+  -webkit-transform-origin: $origin;
+  transform-origin: $origin;
+}
+
+//居中
+@mixin center ($width:"",$height:"") {
+  width: $width;
+  height: $height;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+//清除浮动
+@mixin clearfix {
+  zoom:1;
+  &:before{
+    content:'';
+    display:block;
+  }
+  &:after{
+    content:'';
+    display:table;
+    clear:both;
+  }
+}
