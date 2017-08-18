@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Book from '@/components/Book'
+import Index from '@/views/index'
 import BookDetail from '@/components/BookDetail'
 
 Vue.use(Router)
@@ -9,8 +9,8 @@ const router = new Router({
   routes: [
     {
       path: '/',
-      name: 'Book',
-      component: Book
+      name: 'Index',
+      component: Index
     }, {
       path: '/detail/:index',
       name: 'BookDetail',

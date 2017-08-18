@@ -1,5 +1,6 @@
 <template>
   <div class="book">
+    <author :name="$attrs.name">{{$attrs.name}}</author>
     <div class="ui-input">
       <input v-model="name" />
     </div>
@@ -23,9 +24,11 @@
 <script>
 import { mapGetters } from 'vuex'
 import 'vue-awesome/icons/close'
+import Author from '@/components/Author'
 
 export default {
   name: 'book',
+  inheritAttrs: false,
   data () {
     return {
       name: ''
@@ -35,6 +38,9 @@ export default {
     ...mapGetters([
       'bookList'
     ])
+  },
+  components: {
+    Author
   },
   methods: {
     addBook () {
@@ -107,7 +113,7 @@ $red: #EF2A2A;
       text-align: center;
     }
     .bookName {
-      width: 70%;
+      width: 60%;
     }
   }
 }
