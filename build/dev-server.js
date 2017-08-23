@@ -48,6 +48,17 @@ Object.keys(proxyTable).forEach(function (context) {
   app.use(proxyMiddleware(options.filter || context, options))
 })
 
+// router dev test ajax with localhost data
+var appRouter = express.Router()
+var fs = require('fs')
+appRouter.get('/:apiName', (req,res) => {
+  fs.readFile(`./devData/${req.params.apiName}.json`, 'utf-8', (err, data) => {
+    if(err) throw err
+    res.json(data)
+  })
+})
+app.use('/api',appRouter);
+
 // handle fallback for HTML5 history API
 app.use(require('connect-history-api-fallback')())
 

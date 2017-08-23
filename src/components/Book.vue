@@ -1,6 +1,6 @@
 <template>
   <div class="book">
-    <author :name="$attrs.name">{{$attrs.name}}</author>
+    <author :name="$attrs.name"></author>
     <div class="ui-input">
       <input v-model="name" />
     </div>

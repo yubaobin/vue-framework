@@ -15,6 +15,9 @@ const actions = {
   },
   deleteBook ({ commit }, option) {
     commit('deleteBook', option)
+  },
+  setBooks ({ commit }, option) {
+    commit('setBooks', option)
   }
 }
 
@@ -24,6 +27,9 @@ const mutations = {
   },
   deleteBook (state, { index }) {
     state.books.splice(index, 1)
+  },
+  setBooks (state, { books }) {
+    state.books = [...books]
   }
 }
 

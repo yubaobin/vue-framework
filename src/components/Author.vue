@@ -1,6 +1,6 @@
 <template>
   <div>
-    <slot></slot>
+    {{ $attrs.name }}
   </div>
 </template>
 <script>
@@ -9,7 +9,6 @@ export default {
     return {}
   },
   created () {
-    console.log(this.$attrs.name)
   }
 }
 </script>

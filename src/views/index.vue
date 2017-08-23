@@ -11,6 +11,12 @@ export default {
       name: 'ybb'
     }
   },
+  created () {
+    this.axios.get('/api/book').then((res) => {
+      const books = JSON.parse(res.data).list
+      this.$store.dispatch('setBooks', { books })
+    })
+  },
   components: {
     Book
   }
