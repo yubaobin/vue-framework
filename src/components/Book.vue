@@ -62,9 +62,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-$ppr: 750px/16/1rem;
-$blue: #20A0FF;
-$red: #EF2A2A;
 .book {
   .ui-input {
     display: inline-block;
