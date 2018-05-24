@@ -15,9 +15,17 @@
     </div>
 </template>
 <script>
+import api from '@/api'
   export default {
     data() {
       return {}
+    },
+    created() {
+      api.about().then((res)=>{
+        console.log(res);
+      }).catch(() => {
+
+      });
     }
   }
 </script>

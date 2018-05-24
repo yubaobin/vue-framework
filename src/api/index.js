@@ -6,7 +6,7 @@
 import fetch from '@/utils/fetch'
 
 export default {
-  test(params) {
+  about(params) {
     return fetch('/about', params)
   }
 }
