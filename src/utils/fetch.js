@@ -15,12 +15,13 @@ let instance = axios.create({
     'Access-Control-Allow-Origin': '*'
   }
 })
+// 拦截请求
 instance.interceptors.request.use(function (req) {
   return config.requestInterceptor ? config.requestInterceptor(req) : req
 }, function (err) {
   return Promise.reject(err)
 })
-
+// 拦截返回
 instance.interceptors.response.use(function (res) {
   return config.responseInterceptor ? config.responseInterceptor(res) : res.data
 }, function (err) {

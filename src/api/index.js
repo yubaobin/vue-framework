@@ -7,6 +7,6 @@ import fetch from '@/utils/fetch'
 
 export default {
   about(params) {
-    return fetch('/about', params)
+    return fetch('/about', params, { method: 'post'})
   }
 }
