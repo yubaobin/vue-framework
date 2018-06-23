@@ -3,6 +3,7 @@
  */
 import axios from 'axios'
 import config from '@/config'
+import qs from 'qs'
 const env = process.env.NODE_ENV || 'development'
 
 let instance = axios.create({
@@ -11,7 +12,7 @@ let instance = axios.create({
   timeout: 6000,
   headers: {
     'Accept': '*',
-    'Content-Type': 'application/json',
+    'Content-Type': 'application/x-www-form-urlencoded',
     'Access-Control-Allow-Origin': '*'
   }
 })
@@ -50,7 +51,7 @@ export default async (url = '', params = {}, option = {}) => {
     case 'post':
     case 'put':
     case 'patch':
-      return instance.post(url, params, option)
+      return instance.post(url, qs.stringify(params), option)
     default:
       return Promise.reject(`unknown request method '${method}'`)
   }
