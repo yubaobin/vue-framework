@@ -10,25 +10,25 @@ module.exports = {
   filenameHashing: true, // false 来关闭文件名哈希
   //, pages: {} // 多页面配置
   devServer: {
-  // host: 'localhost', // ip
-  // port: 8080, // 端口
-  // https: false,
-  // hotOnly: false,
-  // open: true,
-  // errorOverlay: true,
-  // notifyOnErrors: true,
-  // proxy: 'http://' // 代理
-  // or
-  // proxy: {
-  //  '/api': {
-  //    target: '<url>',
-  //    ws: true,
-  //    changeOrigin: true
-  //  },
-  //  '/foo': {
-  //    target: '<other_url>'
-  //  }
-  // }
+    // host: 'localhost', // ip
+    // port: 8080, // 端口
+    // https: false,
+    // hotOnly: false,
+    // open: true,
+    // errorOverlay: true,
+    // notifyOnErrors: true,
+    // proxy: 'http://' // 代理
+    // or
+    proxy: {
+      '/juhe': {
+        target: 'http://apis.juhe.cn',
+        ws: true,
+        changeOrigin: true,
+        pathRewrite: {
+          '^/juhe': ''
+        }
+      }
+    }
   },
   chainWebpack: (config) => {
     config.resolve.alias.set('styles', resolve('src/styles'))

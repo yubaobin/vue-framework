@@ -5,7 +5,7 @@ const APP_CONFIG = {
     'Content-Type': 'application/json'
   },
   apiPath: {
-    default: '/api' // 访问基础路径
+    default: '' // 访问基础路径
   },
   // req切面配置
   requestInterceptor (req) {
