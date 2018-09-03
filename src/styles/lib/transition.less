@@ -1,0 +1,48 @@
+/**
+ * vue 过度样式
+ */
+
+@baseTime: .3s;
+
+/**
+ *  left-out
+ */
+.left-out-enter-active {
+  z-index: 1;
+  transition: all @baseTime linear;
+}
+
+.left-out-leave-active {
+  z-index: 0;
+  transition: all @baseTime linear;
+}
+.left-out-enter {
+  transform: translate(100%, 0) translateZ(0);
+}
+
+.left-out-enter-to {
+  opacity: 1;
+  transform: translate(0, 0) translateZ(0);
+}
+
+/**
+ *  right-out
+ */
+
+.right-out-enter-active {
+  z-index: 1;
+  transition: all @baseTime linear;
+}
+
+.right-out-leave-active {
+  z-index: 0;
+  transition: all @baseTime linear;
+}
+.right-out-enter {
+  transform: translate(-100%, 0) translateZ(0);
+}
+
+.right-out-enter-to {
+  opacity: 1;
+  transform: translate(0, 0) translateZ(0);
+}

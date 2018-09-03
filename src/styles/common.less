@@ -1,0 +1,62 @@
+a, abbr, address, article, aside, audio, b, blockquote, body, caption, cite, code, dd, del, dfn, dialog, div, dl, dt, em, fieldset, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, hr, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, p, pre, q, samp, section, small, span, strong, sub, sup, tfoot, th, thead, time, tr, ul, var, video {
+  border: 0;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  font-weight: normal;
+  list-style: none;
+  text-decoration: none;
+}
+html, body{
+  width: 100%;
+  height: 100%;
+}
+body {
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-text-size-adjust:none;
+  -webkit-overflow-scrolling: touch;
+  -webkit-font-smoothing: antialiased;
+  font: 16px "Open Sans", "Helvetica Neue",'Avenir', Helvetica, Arial, sans-serif;
+  padding-top: constant(safe-area-inset-top);
+  padding-left: constant(safe-area-inset-left);
+  padding-right: constant(safe-area-inset-right);
+  padding-bottom: constant(safe-area-inset-bottom);
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0
+}
+
+th, td, caption, button {
+  vertical-align: middle;
+  text-align: center;
+}
+input, button {
+  appearance: none;
+  background-color: #fff;
+  background-image: none;
+  outline: none;
+  -webkit-rtl-ordering: logical;
+  user-select: text;
+}
+
+.view {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+}
+.wrapper {
+  position: absolute;
+  top: 40px/@baseFontSize;
+  left: 0px;
+  width: 100%;
+  bottom: 0px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
