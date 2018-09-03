@@ -1,10 +1,10 @@
-import fetch from "@/utils/fetch"
+import fetch from '@/utils/fetch'
 
-export default  {
-  install(Vue) {
+export default {
+  install (Vue) {
     Vue.prototype.api = {
-      about(params) {
-        return fetch('/about', params, {method: 'post'})
+      about (params) {
+        return fetch('/about', params, { method: 'post' })
       }
     }
   }

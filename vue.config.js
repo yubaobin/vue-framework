@@ -14,7 +14,7 @@ module.exports = {
   // port: 8080, // 端口
   // https: false,
   // hotOnly: false,
-  // autoOpenBrowser: false,
+  // open: true,
   // errorOverlay: true,
   // notifyOnErrors: true,
   // proxy: 'http://' // 代理
@@ -32,11 +32,7 @@ module.exports = {
   },
   chainWebpack: (config) => {
     config.resolve.alias.set('styles', resolve('src/styles'))
-    config.module.rule('eslint').uses.clear()
-    config.module.rule('js').exclude.add(resolve('src/assets/map'))
-
     config.module.rule('svg').exclude.add(resolve('src/assets/svg'))
-
     config.module
       .rule('inline-svg')
       .test(/\.(svg)(\?.*)?$/)

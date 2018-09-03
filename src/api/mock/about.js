@@ -1,7 +1,7 @@
 /**
 * 可以采用mockjs来自动生成mock数据
 */
-const Mock = require("mockjs")
+const Mock = require('mockjs')
 const data = Mock.mock({
   test: 'about'
 })
