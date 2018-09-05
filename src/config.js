@@ -5,7 +5,8 @@ const APP_CONFIG = {
     'Content-Type': 'application/json'
   },
   apiPath: {
-    default: '' // 访问基础路径
+    default: '', // 访问基础路径
+    product: 'http://apis.juhe.cn' // 生产环境
   },
   // req切面配置
   requestInterceptor (req) {

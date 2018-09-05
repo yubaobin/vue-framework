@@ -6,6 +6,7 @@ import config from '@/config'
 import qs from 'qs'
 const env = process.env.NODE_ENV || 'development'
 
+/* eslint-disable prefer-promise-reject-errors */
 let instance = axios.create({
   method: 'post',
   withCredentials: true,
@@ -34,7 +35,7 @@ export default async (url = '', params = {}, option = {}) => {
     return Promise.reject(`params 'url' not exist！`)
   }
   let method = option.method || 'post'
-  let prefixName = option.prefixName || 'default'
+  let prefixName = process.env.NODE_ENV === 'production' ? 'product' : 'default'
   if (url.indexOf('http') !== 0) {
     let prefix = config.apiPath[prefixName]
     if (typeof prefix === 'string') {

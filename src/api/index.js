@@ -5,7 +5,7 @@ export default {
     Vue.prototype.api = {
       qrcode (params) {
         Object.assign(params, { key: '69b57aca41f61fac9e18b22971d5fdc8' })
-        return fetch('/juhe/qrcode/api', params, { method: 'get' })
+        return fetch('/qrcode/api', params, { method: 'get' })
       }
     }
   }
