@@ -24,6 +24,7 @@
     "lib-flexible": "^0.3.2",
     "node-sass": "^4.9.2",
     "sass-loader": "^7.0.3",
+    "style-resources-loader": "^1.2.1",
     "vue-cli-plugin-element": "^1.0.0",
     "vue-template-compiler": "^2.5.17"
   }
