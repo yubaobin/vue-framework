@@ -1,5 +1,10 @@
+/**
+ *  element UI 按需加载
+ */
 import Vue from 'vue'
-import Element from 'element-ui'
-import './element-variables.scss'
+import { Form, FormItem, Input, Button } from 'element-ui'
 
-Vue.use(Element)
+Vue.use(Form)
+Vue.use(FormItem)
+Vue.use(Input)
+Vue.use(Button)

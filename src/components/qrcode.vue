@@ -14,16 +14,9 @@
 </template>
 
 <script>
-import ElInput from '../../node_modules/element-ui/packages/input/src/input.vue'
-import ElForm from '../../node_modules/element-ui/packages/form/src/form.vue'
-import ElFormItem from '../../node_modules/element-ui/packages/form/src/form-item.vue'
 import logo from '../assets/logo.png'
 
 export default {
-  components: {
-    ElFormItem,
-    ElForm,
-    ElInput },
   data () {
     return {
       form: {
