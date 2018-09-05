@@ -1,4 +1,4 @@
-# framework2
+# vue-framework
 
 ## Project setup
 ```
