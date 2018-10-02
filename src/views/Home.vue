@@ -12,6 +12,11 @@ export default {
   name: 'home',
   components: {
     QRcode
+  },
+  created () {
+    this.api.qrcode({}).then((res) => {
+      console.log(res)
+    })
   }
 }
 </script>

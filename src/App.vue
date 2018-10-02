@@ -1,17 +1,13 @@
 <template>
   <div id="app">
-    <q-rcode></q-rcode>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import QRcode from './components/qrcode.vue'
 
 export default {
-  name: 'app',
-  components: {
-    QRcode
-  }
+  name: 'app'
 }
 </script>
 

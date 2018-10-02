@@ -15,6 +15,7 @@ let instance = axios.create({
     'Accept': '*',
     'Content-Type': 'application/x-www-form-urlencoded',
     'Access-Control-Allow-Origin': '*'
+    // 'Authorization': ''
   }
 })
 // 拦截请求
@@ -50,9 +51,15 @@ export default async (url = '', params = {}, option = {}) => {
         params: params
       })
     case 'post':
-    case 'put':
-    case 'patch':
       return instance.post(url, qs.stringify(params), option)
+    case 'put':
+      return instance.put(url, qs.stringify(params), option)
+    case 'patch':
+      return instance.patch(url, qs.stringify(params), option)
+    case 'delete':
+      return instance.delete(url, {
+        params: params
+      })
     default:
       return Promise.reject(`unknown request method '${method}'`)
   }

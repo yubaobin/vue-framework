@@ -23,6 +23,7 @@
     "less": "^3.0.4",
     "less-loader": "^4.1.0",
     "lib-flexible": "^0.3.2",
+    "mockjs": "^1.0.1-beta3",
     "node-sass": "^4.9.2",
     "sass-loader": "^7.0.3",
     "style-resources-loader": "^1.2.1",
