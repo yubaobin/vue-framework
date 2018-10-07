@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
+
+// 懒加载
+const Home = () => import('./views/Home.vue')
 
 Vue.use(Router)
 

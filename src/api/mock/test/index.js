@@ -1,5 +1,5 @@
 export const test = () => {
   return {
-    data: 'test'
+    data: 'a|3:array'
   }
 }

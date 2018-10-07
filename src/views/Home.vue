@@ -14,7 +14,7 @@ export default {
     QRcode
   },
   created () {
-    this.api.qrcode({}).then((res) => {
+    this.api.test({}).then((res) => {
       console.log(res)
     })
   }
