@@ -9,7 +9,7 @@ export default {
         return fetch('/qrcode/api', params, { method: 'get' })
       },
       test () {
-        return fetch('/test', '', { method: 'get' })
+        return fetch('/test1', '', { method: 'post' })
       }
     }
   }
