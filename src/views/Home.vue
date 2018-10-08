@@ -1,6 +1,6 @@
 <template>
   <div class='home'>
-    <q-rcode ></q-rcode>
+    <q-rcode></q-rcode>
   </div>
 </template>
 
@@ -20,3 +20,8 @@ export default {
   }
 }
 </script>
+<style scoped lang="less">
+  .home {
+    text-align: center;
+  }
+</style>
