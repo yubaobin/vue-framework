@@ -42,9 +42,108 @@ input, button {
   user-select: text;
 }
 
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
+.layout-container {
+  background-color: #fff;
+  .layout-header {
+    position: absolute;
+    z-index: 1000;
+    height: @headerHeight;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    box-shadow: 0 2px 4px fade(#000, 20);
+    -webkit-box-shadow: 0 2px 4px fade(#000, 20);
+    .layout-logo {
+      position: absolute;
+      top: 0px;
+      left: 30px;
+      height: @headerHeight;
+      line-height: @headerHeight;
+      img {
+        width: @logoSize;
+        height: @logoSize;
+        vertical-align: middle;
+        margin-right: 14px;
+      }
+      p {
+        font-size: 22px;
+        color: #fff;
+        display: inline-block;
+        vertical-align: middle;
+      }
+    }
+    .layout-header-right {
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      height: @headerHeight;
+      line-height: @headerHeight;
+    }
+    .tx-user {
+      width: 24px;
+      height: 24px;
+      border-radius: 999px;
+      margin-right: 10px;
+    }
+  }
+  .bg-header {
+    background: url('~images/bg-header.jpg') no-repeat center/100% 100%;
+  }
+  .layout-side {
+    position: absolute;
+    top: @headerHeight;
+    bottom: 0;
+    z-index: 999;
+    width: @mainMenuWidth;
+    overflow-x: hidden;
+    box-shadow: 0px 2px 8px fade(#000, 20);
+  }
+  .layout-body {
+    position: absolute;
+    top: @headerHeight;
+    bottom: 0;
+    left: @mainMenuWidth;
+    right: 0px;
+    z-index: 998;
+    background-color: #F0F2F5;
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-sizing: border-box;
+    .content-wrapper {
+      background-color: #fff;
+      position: absolute;
+      top: 66px;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      padding: 20px;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+    .h-title {
+      font-size: 18px;
+      color: fade(#000, 85);
+      padding-bottom: 8px;
+      border-bottom: 1px solid #E8E8E8;
+    }
+    .search-tool {
+      position: relative;
+      padding: 10px 0px;
+      border-bottom: 1px solid #E8E8E8;
+    }
+    .table-container {
+      .btn-container {
+        margin: 16px 0px;
+      }
+      .is-link {
+        cursor: pointer;
+      }
+      .el-pagination {
+        text-align: right;
+        margin-top: 8px;
+      }
+    }
+  }
 }

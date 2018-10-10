@@ -2,18 +2,31 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 // 懒加载
-const Home = () => import('./views/Home.vue')
-const Form = () => import('./views/Form.vue')
+const Login = () => import('./views/login.vue')
+const Index = () => import('./views/index.vue')
+
+const Example = () => import('./views/example.vue')
 Vue.use(Router)
 
-export default new Router({
+let router = new Router({
   routes: [{
-    path: '/',
-    name: 'home',
-    component: Home
+    path: '/login',
+    name: 'login',
+    component: Login
   }, {
-    path: '/form',
-    name: 'form',
-    component: Form
+    path: '/',
+    component: Index,
+    children: [{
+      path: '',
+      name: 'index',
+      component: Example
+    }]
   }]
 })
+
+router.beforeEach((to, from, next) => {
+  console.log(to)
+  next()
+})
+
+export default router

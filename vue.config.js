@@ -41,7 +41,12 @@ module.exports = {
     }
   },
   chainWebpack: (config) => {
+    // 别名
     config.resolve.alias.set('styles', resolve('src/styles'))
+    config.resolve.alias.set('components', resolve('src/components'))
+    config.resolve.alias.set('images', resolve('src/assets/images'))
+    config.resolve.alias.set('iconfont', resolve('src/iconfont'))
+
     config.module.rule('svg').exclude.add(resolve('src/assets/svg'))
     config.module
       .rule('inline-svg')
