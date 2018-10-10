@@ -1,13 +1,24 @@
 // 应用具体配置
 const APP_CONFIG = {
-  appName: 'demo',
+  appName: 'xhcp',
   httpHeaders: {
     'Content-Type': 'application/json'
   },
+  // 是否需要一开始就校验权限
+  needGetUserInfoFirst: false,
+  // session有效时间 ms
+  sessionDuration: 30 * 60 * 1000,
+  // 每个路由默认的权限校验状态
+  defaultAuth: false,
+  // 首页路由名称, 用于处理遭遇各种异常路由时的最终跳转路由
+  indexPageName: 'index',
+  // 登录页路由名称
+  loginPageName: 'login',
   apiPath: {
     default: '', // 访问基础路径
     product: 'http://apis.juhe.cn' // 生产环境
   },
+  accessToken: 'accessToken',
   // req切面配置
   requestInterceptor (req) {
     return req

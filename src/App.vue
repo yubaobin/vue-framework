@@ -7,7 +7,15 @@
 <script>
 
 export default {
-  name: 'app'
+  name: 'app',
+  created () {
+    this.setTitle()
+  },
+  watch: {
+    '$route': function () {
+      this.setTitle()
+    }
+  }
 }
 </script>
 

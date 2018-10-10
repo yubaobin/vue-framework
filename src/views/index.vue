@@ -31,24 +31,7 @@
       </div>
     </div>
     <div class="layout-side">
-        <el-menu
-          class="main-menu"
-          unique-opened>
-          <el-submenu index="1">
-            <template slot="title">
-              <i class="el-icon-location"></i>
-              <span>导航一</span>
-            </template>
-            <el-menu-item index="1-1" style="padding-left: 44px;">标准化种植任务分布管理</el-menu-item>
-          </el-submenu>
-          <el-submenu index="2">
-            <template slot="title">
-              <i class="el-icon-location"></i>
-              <span>导航二</span>
-            </template>
-            <el-menu-item index="2-1" style="padding-left: 44px;">选项1</el-menu-item>
-          </el-submenu>
-        </el-menu>
+        <slide-menu :list="menulist"></slide-menu>
     </div>
     <router-view class="layout-body"></router-view>
   </div>
@@ -56,12 +39,28 @@
 
 <script>
 // @ is an alias to /src
+import SlideMenu from 'components/SlideMenu'
+import { mapActions } from 'vuex'
 export default {
   data () {
     return {
+      menulist: [{
+        name: '公共',
+        icon: 'icon-set',
+        children: [{
+          name: '表格', path: '/table'
+        }]
+      }]
     }
   },
+  components: {
+    SlideMenu
+  },
+  methods: {
+    ...mapActions(['login'])
+  },
   created () {
+    this.login()
   }
 }
 </script>

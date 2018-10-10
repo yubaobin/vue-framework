@@ -3,6 +3,7 @@
  */
 import axios from 'axios'
 import config from '@/config'
+import utils from './index'
 import qs from 'qs'
 const env = process.env.NODE_ENV || 'development'
 
@@ -20,6 +21,10 @@ let instance = axios.create({
 })
 // 拦截请求
 instance.interceptors.request.use(function (req) {
+  const token = utils.getAccessToken()
+  if (token) {
+    instance.defaults.headers.common['Authorization'] = token
+  }
   return config.requestInterceptor ? config.requestInterceptor(req) : req
 }, function (err) {
   return Promise.reject(err)

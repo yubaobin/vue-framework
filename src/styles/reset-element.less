@@ -1,3 +1,6 @@
+/**
+ * 重制element-ui样式
+ */
 .layout-header {
     .el-menu {
         background: none;
@@ -72,11 +75,9 @@
             right: 20px;
             bottom: 0px;
         }
-        .el-menu--inline {
-            .el-menu-item {
-                font-size: 13px;
-                color: #666666;
-            }
+        .el-menu-item {
+            font-size: 13px;
+            color: #666666;
         }
     }
     .el-menu {
@@ -92,8 +93,11 @@
                 margin-top: -5px;
             }
         }
-        .el-menu--inline {
-
+    }
+    .el-menu-item {
+        &.is-active {
+            color: #1890FF;
+            background-color: fade(#1890FF, 5);
         }
     }
 }

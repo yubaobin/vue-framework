@@ -2,30 +2,34 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 // 懒加载
-const Login = () => import('./views/login.vue')
-const Index = () => import('./views/index.vue')
+const Login = () => import('@/views/login.vue')
+const Index = () => import('@/views/index.vue')
 
-const Example = () => import('./views/example.vue')
+const table = () => import('@/views/table.vue')
 Vue.use(Router)
 
 let router = new Router({
   routes: [{
     path: '/login',
     name: 'login',
+    auth: false,
     component: Login
   }, {
     path: '/',
     component: Index,
     children: [{
-      path: '',
-      name: 'index',
-      component: Example
+      path: '/table',
+      name: 'table',
+      meta: {
+        title: '表格',
+        auth: false
+      },
+      component: table
     }]
   }]
 })
 
 router.beforeEach((to, from, next) => {
-  console.log(to)
   next()
 })
 
