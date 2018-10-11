@@ -15,8 +15,9 @@ const APP_CONFIG = {
   // 登录页路由名称
   loginPageName: 'login',
   apiPath: {
-    default: '', // 访问基础路径
-    product: 'http://apis.juhe.cn' // 生产环境
+    development: '', // 开发
+    test: 'http://www.baidu.com', // 测试环境
+    production: 'http://www.bilibili.com' // 生产环境
   },
   accessToken: 'accessToken',
   // req切面配置

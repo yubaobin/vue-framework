@@ -51,6 +51,24 @@ input, button {
 .mt-30 { margin-top: 30px; }
 .mt-40 { margin-top: 40px; }
 
+.img-block {
+  font-size: 0px;
+  .img-bd {
+    vertical-align: middle;
+    margin-right: 10px;
+    width: 64px;
+    max-height: 48px;
+  }
+  .c-bd {
+    display: inline-block;
+    vertical-align: middle;
+    p {
+      text-align: left;
+      font-size: 12px;
+      color: #8C8C8C;
+    }
+  }
+}
 
 .layout-container {
   background-color: #fff;
@@ -122,7 +140,7 @@ input, button {
     .content-wrapper {
       background-color: #fff;
       position: absolute;
-      top: 66px;
+      top: 20px;
       bottom: 20px;
       left: 20px;
       right: 20px;
@@ -131,6 +149,9 @@ input, button {
       padding: 20px;
       overflow-x: hidden;
       overflow-y: auto;
+      &.b-wrapper {
+        top: 66px;
+      }
     }
     .h-title {
       font-size: 18px;
@@ -153,6 +174,12 @@ input, button {
       .el-pagination {
         text-align: right;
         margin-top: 8px;
+      }
+    }
+    .form-v1 {
+      margin-top: 16px;
+      .el-form {
+        margin: 0 auto;
       }
     }
   }

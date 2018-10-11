@@ -1,5 +1,4 @@
 import fetch from '@/utils/fetch'
-import './mock'
 
 export default {
   qrcode (params = {}) {

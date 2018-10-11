@@ -41,13 +41,10 @@ export default async (url = '', params = {}, option = {}) => {
     return Promise.reject(`params 'url' not exist！`)
   }
   let method = option.method || 'post'
-  let prefixName = process.env.NODE_ENV === 'production' ? 'product' : 'default'
   if (url.indexOf('http') !== 0) {
-    let prefix = config.apiPath[prefixName]
+    let prefix = config.apiPath[env]
     if (typeof prefix === 'string') {
       url = prefix + url
-    } else if (typeof prefix === 'object') {
-      url = prefix[env] + url
     }
   }
   switch (method) {

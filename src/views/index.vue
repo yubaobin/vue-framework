@@ -45,10 +45,15 @@ export default {
   data () {
     return {
       menulist: [{
+        id: '1',
         name: '公共',
         icon: 'icon-set',
         children: [{
-          name: '表格', path: '/table'
+          name: '表格1', path: '/table1'
+        }, {
+          name: '表格2', path: '/table2'
+        }, {
+          name: '表单1', path: '/form1'
         }]
       }]
     }

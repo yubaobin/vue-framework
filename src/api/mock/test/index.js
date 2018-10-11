@@ -4,6 +4,11 @@ export const test1 = () => {
   random.email('@EMAIL()') // 随机生成email
   return {
     'total': 12,
-    'array|10': [{ 'id|+1': 1, 'name': random.cname(), 'email': '@EMAIL' }]
+    'array|10': [{
+      'id|+1': 1,
+      'video': { 'img': random.image('64x48'), 'name': random.csentence(11), 'date': random.date('yyyy-mm-dd') },
+      'name': random.cname(),
+      'status': random.boolean,
+      'email': '@EMAIL' }]
   }
 }
