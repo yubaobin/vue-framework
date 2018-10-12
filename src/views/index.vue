@@ -10,15 +10,17 @@
       </div>
       <div class="layout-header-right">
         <el-menu mode="horizontal" text-color="#fff">
-          <el-submenu index="1">
-            <template slot="title">
-              <i class="el-icon-location"></i>
-              <span>切换系统</span>
-            </template>
-            <el-menu-item index="1-1">选项1</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
-            <el-menu-item index="1-3">选项3</el-menu-item>
-          </el-submenu>
+          <el-menu-item index="1">
+            <el-dropdown slot="title">
+              <div class="el-dropdown-link">
+                <i class="iconfont icon-set"></i>
+                <span>切换系统</span>
+              </div>
+              <el-dropdown-menu slot="dropdown">
+                <div>123</div>
+              </el-dropdown-menu>
+            </el-dropdown>
+          </el-menu-item>
           <el-menu-item index="2">
             <img class="tx-user" src="~images/logo.png" />
             <span slot="title">选项1</span>

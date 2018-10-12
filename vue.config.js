@@ -58,6 +58,14 @@ module.exports = {
       .use('svg-inline-loader')
       .loader('svg-inline-loader')
 
+    config.module
+      .rule('swf')
+      .test(/\.(mp4|flv|swf)(\?v=[0-9]\.[0-9]\.[0-9])?$/)
+      .use('file-loader')
+      .loader('file-loader')
+      .options({
+        name: 'swf/[name].[hash:8].[ext]'
+      })
     // less
     const types = ['vue-modules', 'vue', 'normal-modules', 'normal']
     types.forEach(type => addStyleResource(config.module.rule('less').oneOf(type)))

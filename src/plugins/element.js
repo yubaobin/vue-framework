@@ -41,7 +41,10 @@ import {
   CheckboxButton,
   CheckboxGroup,
   Switch,
-  InputNumber
+  InputNumber,
+  Dropdown,
+  DropdownMenu,
+  DropdownItem
 } from 'element-ui'
 
 Vue.use(Row)
@@ -77,6 +80,9 @@ Vue.use(CheckboxButton)
 Vue.use(CheckboxGroup)
 Vue.use(Switch)
 Vue.use(InputNumber)
+Vue.use(Dropdown)
+Vue.use(DropdownMenu)
+Vue.use(DropdownItem)
 
 Vue.prototype.$loading = Loading.service
 Vue.prototype.$msgbox = MessageBox

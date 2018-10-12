@@ -2,13 +2,6 @@
  * 重制element-ui样式
  */
 .layout-header {
-    .el-menu {
-        background: none;
-        color: #fff;
-        .iconfont {
-            margin-right: 10px;
-        }
-    }
     .el-submenu {
         [class^=el-icon-] {
             margin-right: 10px;
@@ -20,40 +13,50 @@
             color: #fff;
         }
     }
-    .el-menu--horizontal {
-        border: none;
-        & > .el-submenu {
-            .el-submenu__title {
-                padding: 0px 15px;
+    .el-menu {
+        background: none;
+        color: #fff;
+        .iconfont {
+            margin-right: 10px;
+        }
+        &.el-menu--horizontal {
+            border: none;
+            & > .el-submenu {
+                .el-submenu__title {
+                    padding: 0px 15px;
+                    height: @headerHeight;
+                    line-height: @headerHeight;
+                    i {
+                        color: #fff;
+                    }
+                    &:hover, &:focus {
+                        background: none;
+                    }
+                }
+                .el-submenu__icon-arrow {
+                    margin-top: 0px;
+                }
+            }
+            .el-menu-item:not(.is-disabled):focus, .el-menu-item:not(.is-disabled):hover {
+                color: fade(#fff, 80);
+            }
+            & > .el-menu-item:not(.is-disabled):hover, & > .el-menu-item:not(.is-disabled):focus {
+                background: none;
+            }
+            & > .el-menu-item {
                 height: @headerHeight;
                 line-height: @headerHeight;
-                i {
-                    color: #fff;
-                }
-                &:hover, &:focus {
-                    background: none;
-                }
-            }
-            .el-submenu__icon-arrow {
-                margin-top: 0px;
-            }
-        }
-        .el-menu-item:not(.is-disabled):focus, .el-menu-item:not(.is-disabled):hover {
-            color: fade(#fff, 80);
-        }
-        & > .el-menu-item:not(.is-disabled):hover, & > .el-menu-item:not(.is-disabled):focus {
-            background: none;
-        }
-        & > .el-menu-item {
-            height: @headerHeight;
-            line-height: @headerHeight;
-            color: #fff;
-            border: none;
-            &.is-active {
-                color: fade(#fff, 80);
+                color: #fff;
                 border: none;
+                &.is-active {
+                    color: fade(#fff, 80);
+                    border: none;
+                }
             }
         }
+    }
+    .el-dropdown {
+        color: #fff;
     }
 }
 .layout-side {
@@ -200,6 +203,13 @@
                 }
             }
         }
+        .el-select {
+            .el-input {
+                .el-select__caret {
+                    -ms-transform: rotate(180deg);
+                }
+            }
+        }
     }
     .el-message-box__status {
         top: 10px;
@@ -230,10 +240,4 @@
         }
     }
 }
-.el-select {
-    .el-input {
-        .el-select__caret {
-            -ms-transform: rotate(180deg);
-        }
-    }
-}
+
