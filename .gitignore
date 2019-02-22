@@ -1,7 +1,8 @@
 .DS_Store
 node_modules
 /dist
-/demo_pcV1
+/VuePcDemo
+VuePcDemo.zip
 demo_pcV1.zip
 # local env files
 .env.local

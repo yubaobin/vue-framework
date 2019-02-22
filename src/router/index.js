@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-
+import config from '@/config'
 // 懒加载
 const Login = () => import('@/views/login.vue')
 const Index = () => import('@/views/index.vue')
@@ -13,6 +13,9 @@ const form = () => import('@/views/common/form.vue')
 Vue.use(Router)
 
 let router = new Router({
+  mode: 'history',
+  base: `/${config.root}`,
+  // fallback: false,
   routes: [{
     path: '*',
     component: NotFoundComponent

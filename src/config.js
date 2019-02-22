@@ -14,11 +14,8 @@ const APP_CONFIG = {
   indexPageName: 'index',
   // 登录页路由名称
   loginPageName: 'login',
-  apiPath: {
-    development: '', // 开发
-    test: 'http://www.baidu.com', // 测试环境
-    production: 'http://www.bilibili.com' // 生产环境
-  },
+  apiPath: process.env.VUE_APP_apipath ? process.env.VUE_APP_apipath : '', // 接口服务器路径
+  root: process.env.VUE_APP_publicPath ? process.env.VUE_APP_publicPath : '',
   accessToken: 'accessToken',
   // req切面配置
   requestInterceptor (req) {
