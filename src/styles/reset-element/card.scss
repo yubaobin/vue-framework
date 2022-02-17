@@ -1,0 +1,26 @@
+#app {
+    .el-card__header {
+        position: relative;
+        padding: 16px 24px;
+        .tips-right {
+            right: 24px;
+        }
+    }
+    .box-card-mini {
+        .el-card__header {
+            padding: 16px 8px;
+            font-size: $--font-size-base;
+            .tips-right {
+                right: 8px;
+            }
+        }
+    }
+    .el-card__body {
+        padding: 0;
+        .box-panel {
+            border: none;
+            margin: -1px 0 0 -1px;
+            box-shadow: 1px 0 0 0 #e8e8e8, 0 1px 0 0 #e8e8e8, 1px 1px 0 0 #e8e8e8, inset 1px 0 0 0 #e8e8e8, inset 0 1px 0 0 #e8e8e8;
+        }
+    }
+}

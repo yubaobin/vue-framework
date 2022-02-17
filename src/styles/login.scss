@@ -1,0 +1,127 @@
+.login-container {
+    height: 100vh;
+    position: relative;
+    margin: 0;
+    width: 100vw;
+    min-height: 550px;
+    background-size: 100% auto;
+    background-color: $--color-primary;
+    .login {
+        position: absolute;
+        left: 60%;
+        top: 40%;
+        transform: translateY(-50%);
+        width: 320px;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 10px;
+        padding: 24px;
+        box-sizing: border-box;
+        .el-form {
+            .el-form-item__error {
+                padding-top: 2px;
+            }
+            .el-input__prefix {
+                left: 8px;
+            }
+            .el-input__suffix {
+                right: 0;
+            }
+        }
+        .login-bottom {
+            font-size: $--font-size-base;
+            .el-form-item {
+              margin-bottom: 0;
+            }
+            .el-checkbox {
+                font-weight: normal;
+                vertical-align: middle;
+                .el-checkbox__inner {
+                    border: none;
+                }
+                .el-checkbox__label {
+                    vertical-align: middle;
+                }
+            }
+            .xy-span {
+                vertical-align: middle;
+                &:hover {
+                    color: rgba($--color-primary, 0.8);
+                }
+            }
+            .el-form-item__content {
+                line-height: 1;
+            }
+        }
+    }
+    footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 14px 0;
+        height: auto;
+        background: $--color-primary;
+        color: #fff;
+        font-size: 10px;
+        & > ul {
+            display: flex;
+            margin: 0;
+        }
+        p {
+            margin: 0;
+            line-height: 16px;
+        }
+        .footer-info {
+            flex: 1;
+            padding: 0 40px;
+            border-right: 1px solid #fff;
+            list-style: none;
+            text-align: right;
+            box-sizing: border-box;
+            h4 {
+                margin: 0;
+                font-size: 12px;
+                font-weight: 500;
+            }
+            &:nth-of-type(3) {
+                position: relative;
+                flex: 0 0 320px;
+                text-align: center;
+            }
+            &:last-of-type {
+                border-right: none;
+                text-align: left;
+            }
+        }
+        .copy {
+            margin-top: 10px;
+            text-align: center;
+        }
+    }
+    .btn-large {
+        display: block;
+        width: 100%;
+    }
+}
+.nav-title {
+    margin: 24px 0 16px 0;
+    color: #333;
+    text-align: center;
+    font-size: 16px;
+    .nav-title-item {
+        display: inline-block;
+        vertical-align: middle;
+        width: 90px;
+        line-height: 40px;
+        margin: 0 4px;
+        border-bottom: 4px solid transparent;
+        cursor: pointer;
+        &.active {
+            border-color: $--color-primary;
+        }
+    }
+    .title-text {
+        font-size: 20px;
+        color: $--color-text-primary;
+    }
+}

@@ -1,50 +1,43 @@
-import { LOGIN, LOGOUT, GET_USER_INFO } from '../mutation-types'
-import { doAction } from '../util'
-
+import { removeTokenFromCache, removeUserInfoFromCache } from '@/utils'
 const state = {
-  isLogin: false,
-  userInfo: {}
+    userInfo: {},
+    roles: []
 }
 
 const mutations = {
-  [LOGIN] (state, userInfo) {
-    state.isLogin = true
-    state.userInfo = userInfo
-  },
-  [LOGOUT] (state) {
-    state.isLogin = false
-    state.userInfo = {}
-  },
-  [GET_USER_INFO] (state, userInfo) {
-    state.userInfo = userInfo
-  }
+    LOGOUT (state) {
+        state.userInfo = {}
+        removeUserInfoFromCache()
+        removeTokenFromCache()
+    },
+    GET_USER_INFO (state, userInfo) {
+        state.userInfo = userInfo
+    },
+    SET_ROLES (state, roles) {
+        state.roles = roles
+    }
 }
 
 const actions = {
-  login (store = {}, params) {
-    console.log(this._vm.api)
-    return doAction({
-      // api: api.login,
-      params,
-      mutationName: LOGIN
-    })
-  },
-  logout () {
-    return doAction({
-      // api: api.logout,
-      mutationName: LOGOUT
-    })
-  },
-  getUserInfo () {
-    return doAction({
-      // api: api.getUserInfo,
-      mutationName: GET_USER_INFO
-    })
-  }
-
+    logout ({ commit }) {
+        commit('LOGOUT')
+    },
+    getUserInfoByMock ({ commit }) {
+        return new Promise((resolve) => {
+            const user = { id: 1, roles: ['admin'], name: '测试' }
+            console.log('当前用户信息', user)
+            resolve(user)
+            commit('SET_ROLES', user.roles || [])
+            commit('GET_USER_INFO', user)
+        })
+    },
+    changeRoles ({ commit }, roles) {
+        commit('SET_ROLES', roles)
+    }
 }
 export default {
-  state,
-  actions,
-  mutations
+    namespaced: true,
+    state,
+    actions,
+    mutations
 }

@@ -1,0 +1,16 @@
+.el-dialog {
+    border-radius: $--border-radius-base;
+    .el-dialog__header {
+        padding: 16px 24px;
+        border-bottom: 1px solid $--border-color-base;
+    }
+    .el-dialog__body {
+        position: relative;
+        padding: 24px;
+    }
+    .el-dialog__footer {
+        border-top: 1px solid $--border-color-base;
+        padding: 10px 0;
+        text-align: center;
+    }
+}

@@ -1,0 +1,29 @@
+.el-tabs {
+    .el-tabs__header {
+        background-color: $--color-white;
+        margin: 0;
+        .el-tabs__nav-scroll {
+            padding: 24px 24px 0;
+        }
+    }
+}
+.el-tabs__item {
+    color: $--color-text-primary;
+    padding: 0 24px;
+}
+
+.el-tabs--border-card {
+    & > .el-tabs__header {
+        background-color: $--background-color-base;
+        margin: 0;
+        .el-tabs__nav-scroll {
+            padding: 0;
+        }
+        .el-tabs__item {
+            &.is-active {
+                border-top-color: $--color-primary;
+                margin-top: 0;
+            }
+        }
+    }
+}

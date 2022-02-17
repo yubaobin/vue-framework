@@ -1,0 +1,124 @@
+/* 颜色
+-------------------------- */
+$--color-white: #fff !default;
+$--color-black: #000 !default;
+
+$--color-primary: #EB3434 !default;
+$--color-primary-light-1: mix($--color-white, $--color-primary, 10%) !default; /* 53a8ff */
+$--color-primary-light-2: mix($--color-white, $--color-primary, 20%) !default; /* 66b1ff */
+$--color-primary-light-3: mix($--color-white, $--color-primary, 30%) !default; /* 79bbff */
+$--color-primary-light-4: mix($--color-white, $--color-primary, 40%) !default; /* 8cc5ff */
+$--color-primary-light-5: mix($--color-white, $--color-primary, 50%) !default; /* a0cfff */
+$--color-primary-light-6: mix($--color-white, $--color-primary, 60%) !default; /* b3d8ff */
+$--color-primary-light-7: mix($--color-white, $--color-primary, 70%) !default; /* c6e2ff */
+$--color-primary-light-8: mix($--color-white, $--color-primary, 80%) !default; /* d9ecff */
+$--color-primary-light-9: mix($--color-white, $--color-primary, 90%) !default; /* ecf5ff */
+
+$--color-success: #67c23a !default;
+$--color-warning: #e6a23c !default;
+$--color-danger: #f56c6c !default;
+$--color-info: #909399 !default;
+$--color-success-light: mix($--color-white, $--color-success, 80%) !default;
+$--color-warning-light: mix($--color-white, $--color-warning, 80%) !default;
+$--color-danger-light: mix($--color-white, $--color-danger, 80%) !default;
+$--color-info-light: mix($--color-white, $--color-info, 80%) !default;
+
+$--color-success-lighter: mix($--color-white, $--color-success, 90%) !default;
+$--color-warning-lighter: mix($--color-white, $--color-warning, 90%) !default;
+$--color-danger-lighter: mix($--color-white, $--color-danger, 90%) !default;
+$--color-info-lighter: mix($--color-white, $--color-info, 90%) !default;
+
+$--color-text-primary: #333333 !default;
+$--color-text-regular: #606666 !default;
+$--color-text-secondary: #999999 !default;
+$--color-text-placeholder: #c0c4cc !default;
+
+/* Link
+-------------------------- */
+$--link-color: $--color-primary-light-2 !default;
+$--link-hover-color: $--color-primary !default;
+
+/* Background
+-------------------------- */
+$--background-color-base: #FAFAFA !default;
+
+/* Border
+-------------------------- */
+$--border-width-base: 1px !default;
+$--border-style-base: solid !default;
+$--border-color-base: #dcdfe6 !default;
+$--border-color-light: #e4e7ed !default;
+$--border-color-lighter: #ebeef5 !default;
+$--border-color-extra-light: #f2f6fc !default;
+$--border-color-hover: $--color-text-placeholder !default;
+$--border-base: $--border-width-base $--border-style-base $--border-color-base !default;
+$--border-radius-base: 4px !default;
+$--border-radius-small: 2px !default;
+$--border-radius-circle: 100% !default;
+
+/* Fill
+-------------------------- */
+$--fill-base: $--color-white !default;
+
+/* Font
+-------------------------- */
+$--font-path: 'fonts' !default;
+$--font-size-base: 14px !default;
+$--font-size-small: 12px !default;
+$--font-size-medium: 16px !default;
+$--font-size-large: 18px !default;
+$--font-size-extra-large: 24px !default;
+$--font-color-disabled-base: #bbb !default;
+$--font-weight-primary: 500 !default;
+$--font-line-height-primary: 24px !default;
+
+/* Size
+-------------------------- */
+$--size-base: 14px !default;
+
+/* Menu
+-------------------------- */
+$--menu-text: $--color-text-primary; // 菜单颜色
+$--menu-active-bg: #E2E2E2; // 菜单激活颜色
+
+$--menu-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.28);
+
+$--menu-background-color: #F3F3F3; // 菜单背景颜色
+$--menu-item-hover-fill: #E2E2E2; // hover 颜色
+$--menu-item-font-color: $--color-text-primary;
+$--logo-bg: $--color-primary;
+$--logo-border: none;
+$--logo-height: 50px;
+
+$--sub-menu-bg: #FFF; // 子菜单背景颜色
+$--sub-menu-hover: $--menu-active-bg;
+
+$--hamburger-color: $--menu-item-font-color;
+
+$--hide-bar-width: 54px;
+$--side-bar-width: 190px;
+$--narbar-height: 56px;
+$--narbar-bg: $--color-primary;
+$--narbar-menu-bg: transparent;
+$--narbar-menu-text: #FFF;
+$--narbar-active-text: #FFF;
+
+$--narbar-menu-item-fontsize: $--font-size-medium;
+$--menu-item-font-size: $--font-size-base;
+
+/* Button
+-------------------------- */
+$--button-default-font-color: #565759;
+
+/* TagView
+-------------------------- */
+$--tagsview-height: 40px;
+$--tagsview-item-height: 32px;
+$--tagsview-bg: #F3F3F3;
+$--tagsview-fontsize: $--font-size-small;
+$--tagsview-color: $--color-text-primary;
+$--tagsview-cctive-color: $--color-primary;
+$--tagsview-cctive-bg: $--color-white;
+
+$--tree-text-active-color: $--color-primary;
+

@@ -1,17 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title>vue-framework</title>
-  </head>
-  <body class="xhcp">
-    <noscript>
-      <strong>We're sorry but framework2 doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<link rel="icon" href="<%= BASE_URL %>favicon.ico">
+		<title>前端框架</title>
+	</head>
+
+	<body>
+		<!--此脚本用于页面性能上报-->
+		<!--     <script>
+    !(function(c, b, d, a) {
+        c[a] || (c[a] = {});
+        c[a].config = {
+          userId: '',
+          appKey: 'YF_khala-front',
+          imgUrl: 'http://132.122.1.16:8092/insight-web/frontend/resource/up?',
+          disableHook: false,
+          disableJS: false,
+          disableResource: false
+        };
+        var dom = document.createElement('script');
+        dom.setAttribute('crossorigin', 'anonymous');
+        dom.setAttribute('src', d);
+        document.body.insertBefore(dom, document.body.firstChild);
+    })(window, document, 'http://132.122.1.16/bundle.js', '__ml');
+    </script> -->
+		<noscript>
+			<strong>We're sorry but framework2 doesn't work properly without JavaScript enabled. Please enable it to
+				continue.</strong>
+		</noscript>
+		<input id="BaseUrl" type="hidden" value="<%= BASE_URL %>" />
+		<div id="app"></div>
+		<script>
+			var baseUrl = document.getElementById('BaseUrl').value
+			window.baseUrl = baseUrl
+		</script>
+		<!-- built files will be auto injected -->
+	</body>
+
 </html>

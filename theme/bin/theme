@@ -1,0 +1,17 @@
+#!/usr/bin/env node
+
+var program = require('commander')
+var main = require('../index.js')
+var config = {}
+
+console.log()
+process.on('exit', function () {
+  console.log()
+})
+
+program
+  .version(require('../package.json').version)
+  .option('-t --theme [theme]', '编译一个主题', function (theme) { if (theme) config.theme = theme })
+  .parse(process.argv)
+
+main.run(config)

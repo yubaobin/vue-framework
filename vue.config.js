@@ -1,73 +1,95 @@
 const path = require('path')
+const isProduction = process.env.NODE_ENV === 'production'
+const theme = isProduction ? 'normal' : process.env.VUE_APP_theme || 'normal'
 function resolve (dir) {
-  return path.join(__dirname, '', dir)
-}
-
-function addStyleResource (rule) {
-  rule.use('style-resource')
-    .loader('style-resources-loader')
-    .options({
-      patterns: [
-        resolve('./src/styles/variables.less')
-      ]
-    })
+    return path.join(__dirname, '', dir)
 }
 
 module.exports = {
-  baseUrl: process.env.VUE_APP_publicPath, // 项目的根路径, 默认: '/' 这个值也可以被设置为空字符串 ('') 或是相对路径 ('./')，这样所有的资源都会被链接为相对路径
-  outputDir: process.env.VUE_APP_outputDir, // 生成的环境构建文件的目录 在.env.xx 文件配置
-  //, assetsDir: '' // 放置生成的静态资源 默认: ''
-  filenameHashing: true, // false 来关闭文件名哈希
-  //, pages: {} // 多页面配置
-  devServer: {
-    // host: 'localhost', // ip
-    // port: 8080, // 端口
-    // https: false,
-    // hotOnly: false,
-    // open: true,
-    // errorOverlay: true,
-    // notifyOnErrors: true,
-    // proxy: 'http://' // 代理
-    // or
-    proxy: {
-      '/qrcode': {
-        target: 'http://apis.juhe.cn/qrcode',
-        ws: true,
-        changeOrigin: true,
-        pathRewrite: {
-          '^/qrcode': ''
+    publicPath: process.env.VUE_APP_publicPath,
+    outputDir: process.env.VUE_APP_outputDir,
+    lintOnSave: 'error',
+    filenameHashing: isProduction,
+    productionSourceMap: !isProduction,
+    devServer: {
+        proxy: {
+            '/': {
+                target: 'http://localhost:8080', // 接口的域名或ip
+                ws: false, // 是否代理websockets
+                secure: false, // 如果是https接口，需要配置这个参数
+                changeOrigin: false, // 如果接口跨域，需要进行这个参数配置
+                pathRewrite: {
+                    // pathRewrite 来重写地址，将前缀 '/api' 转为 ''
+                    '^/': ''
+                }
+            }
         }
-      }
+    },
+    configureWebpack: {
+        devtool: isProduction ? undefined : 'source-map',
+        externals: {
+            echarts: 'echarts'
+        }
+    },
+    chainWebpack: config => {
+        config.plugins.delete('preload')
+        config.plugins.delete('prefetch')
+        // 别名
+        config.resolve.alias.set('styles', resolve('src/styles'))
+        config.resolve.alias.set('components', resolve('src/components'))
+        config.resolve.alias.set('images', resolve('src/assets/images'))
+        // 添加flash模块
+        config.module
+            .rule('swf')
+            .test(/\.(mp4|flv|swf)(\?v=[0-9]\.[0-9]\.[0-9])?$/)
+            .use('file-loader')
+            .loader('file-loader')
+            .options({
+                name: 'swf/[name].[hash:8].[ext]'
+            })
+        config.when(isProduction, diffConfig => {
+            diffConfig
+                .plugin('ScriptExtHtmlWebpackPlugin')
+                .after('html')
+                .use('script-ext-html-webpack-plugin', [
+                    {
+                        inline: /runtime\..*\.js$/
+                    }
+                ])
+                .end()
+            diffConfig.optimization.splitChunks({
+                // 提取公共代码并合并
+                chunks: 'all',
+                cacheGroups: {
+                    libs: {
+                        name: 'chunk-libs',
+                        test: /[\\/]node_modules[\\/]/,
+                        priority: 10,
+                        chunks: 'initial'
+                    },
+                    elementUI: {
+                        name: 'chunk-elementUI',
+                        priority: 20,
+                        test: /[\\/]node_modules[\\/]_?element-ui(.*)/
+                    },
+                    commons: {
+                        name: 'chunk-commons',
+                        test: resolve('src/components'),
+                        minChunks: 3,
+                        priority: 5,
+                        reuseExistingChunk: true
+                    }
+                }
+            })
+        })
+    },
+    css: {
+        extract: isProduction ? { ignoreOrder: true } : false,
+        sourceMap: !isProduction,
+        loaderOptions: {
+            sass: {
+                prependData: `@import "~styles/theme/${theme}/variables.scss";`
+            }
+        }
     }
-  },
-  chainWebpack: (config) => {
-    // 别名
-    config.resolve.alias.set('styles', resolve('src/styles'))
-    config.resolve.alias.set('components', resolve('src/components'))
-    config.resolve.alias.set('images', resolve('src/assets/images'))
-    config.resolve.alias.set('iconfont', resolve('src/iconfont'))
-
-    config.module.rule('svg').exclude.add(resolve('src/assets/svg'))
-    config.module
-      .rule('inline-svg')
-      .test(/\.(svg)(\?.*)?$/)
-      .exclude.add([resolve('src/assets/images')])
-      .end()
-      .include.add([resolve('src/assets/svg')])
-      .end()
-      .use('svg-inline-loader')
-      .loader('svg-inline-loader')
-
-    config.module
-      .rule('swf')
-      .test(/\.(mp4|flv|swf)(\?v=[0-9]\.[0-9]\.[0-9])?$/)
-      .use('file-loader')
-      .loader('file-loader')
-      .options({
-        name: 'swf/[name].[hash:8].[ext]'
-      })
-    // less
-    const types = ['vue-modules', 'vue', 'normal-modules', 'normal']
-    types.forEach(type => addStyleResource(config.module.rule('less').oneOf(type)))
-  }
 }

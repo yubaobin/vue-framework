@@ -1,0 +1,47 @@
+{
+	"name": "generato-theme",
+	"version": "0.0.1",
+	"description": "generato-theme",
+	"bin": {
+		"community-theme": "./bin/theme",
+		"ct": "./bin/theme"
+	},
+	"files": [
+		"bin",
+		"lib"
+	],
+	"scripts": {
+		"test": "xo"
+	},
+	"xo": {
+		"space": true,
+		"rule": {
+			"semi": 0,
+			"unicorn/no-process-exit": 0,
+			"import/no-dynamic-require": 0
+		}
+	},
+	"keywords": [],
+	"engines": {
+		"node": ">=0.12.0"
+	},
+	"dependencies": {
+		"commander": "^2.9.0",
+		"del": "^5.1.0",
+		"gulp": "^4.0.2",
+		"gulp-autoprefixer": "^8.0.0",
+		"gulp-clean-css": "^3.0.4",
+		"gulp-concat": "^2.6.1",
+		"gulp-css-url-adjuster": "^0.2.3",
+		"gulp-css-wrap": "^0.1.2",
+		"gulp-cssmin": "^0.2.0",
+		"gulp-nop": "0.0.3",
+		"gulp-sass": "^5.0.0",
+		"gulp4-run-sequence": "^1.0.1",
+		"ora": "^0.3.0",
+		"sass": "^1.39.0"
+	},
+	"devDependencies": {
+		"xo": "^0.17.0"
+	}
+}

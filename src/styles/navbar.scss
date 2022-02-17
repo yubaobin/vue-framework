@@ -1,0 +1,105 @@
+.navbar {
+    height: $--narbar-height;
+    overflow: hidden;
+    position: relative;
+    background: #fff;
+    box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+    .hamburger-container {
+        line-height: $--narbar-height;
+        height: 100%;
+        float: left;
+        cursor: pointer;
+        transition: background 0.3s;
+        -webkit-tap-highlight-color: transparent;
+        &:hover {
+            background: rgba(0, 0, 0, 0.025);
+        }
+    }
+    .breadcrumb-container {
+        float: left;
+        line-height: $--narbar-height;
+        font-size: 14px;
+        margin-left: 8px;
+        .no-redirect {
+            color: $--color-text-primary;
+            cursor: text;
+        }
+        span {
+            vertical-align: middle;
+        }
+    }
+    .right-menu {
+        float: right;
+        height: 100%;
+        line-height: $--narbar-height;
+        &:focus {
+            outline: none;
+        }
+        .right-menu-item {
+            display: inline-block;
+            padding: 0 8px;
+            height: 100%;
+            font-size: 18px;
+            color: #5a5e66;
+            vertical-align: text-bottom;
+            &.hover-effect {
+                cursor: pointer;
+                transition: background 0.3s;
+                &:hover {
+                    background: rgba(0, 0, 0, 0.025);
+                }
+            }
+        }
+        .item-text {
+            font-size: 14px;
+            [class^='el-icon-'] {
+                margin-right: 4px;
+            }
+        }
+        .avatar-container {
+            margin-right: 30px;
+            .avatar-wrapper {
+                position: relative;
+                .user-avatar {
+                    cursor: pointer;
+                    width: 24px;
+                    height: 24px;
+                    border-radius: 999px;
+                    vertical-align: middle;
+                    margin-right: 10px;
+                }
+                .user-name {
+                    font-size: $--font-size-base;
+                    color: rgba(#000, 0.65);
+                    vertical-align: middle;
+                }
+                .el-icon-caret-bottom {
+                    cursor: pointer;
+                    position: absolute;
+                    right: -20px;
+                    top: 25px;
+                    font-size: 12px;
+                }
+            }
+        }
+        .el-menu {
+            &.el-menu--horizontal {
+                display: inline-block;
+                border: none;
+                & > .el-menu-item {
+                    height: $--narbar-height;
+                    line-height: $--narbar-height;
+                }
+                & > .el-submenu {
+                    .el-submenu__title {
+                        height: $--narbar-height;
+                        line-height: $--narbar-height;
+                    }
+                }
+            }
+        }
+        .el-badge {
+            line-height: 1;
+        }
+    }
+}

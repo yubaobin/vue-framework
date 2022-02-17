@@ -1,0 +1,151 @@
+.el-radio__label,
+.el-radio__inner {
+    vertical-align: middle;
+}
+.el-textarea {
+    .el-textarea__inner {
+        padding-bottom: 20px;
+    }
+    .el-input__count {
+        line-height: 1;
+    }
+}
+.el-input {
+    .el-input__count {
+        line-height: 1;
+    }
+}
+.btn-group {
+    .el-button {
+        & + .el-button {
+            margin-left: 16px;
+        }
+        & + .el-link {
+            margin-left: 16px;
+        }
+    }
+    &.center {
+        text-align: center;
+    }
+}
+
+.el-step__head,
+.el-step__title {
+    &.is-process {
+        color: $--color-primary;
+        border-color: $--color-primary;
+    }
+}
+
+.el-dropdown-menu {
+    padding: 5px 10px;
+}
+.form-title {
+    position: relative;
+    font-size: $--font-size-medium;
+    color: #000000;
+    display: inline-block;
+    padding-left: 16px;
+    margin-bottom: 16px;
+    line-height: 1;
+    &:before {
+        position: absolute;
+        left: 0;
+        content: '';
+        width: 6px;
+        background-color: $--color-primary;
+        height: 18px;
+        top: -1px;
+        display: inline-block;
+    }
+}
+.form-v1 {
+    padding: 24px 38px;
+    .form-top {
+        position: relative;
+    }
+    .form-footer {
+        padding-top: 24px;
+        text-align: center;
+    }
+}
+
+.addoredit-form {
+    width: 70%;
+}
+
+.form-wrapper {
+    width: 70%;
+    margin: auto;
+}
+
+.add-or-edit-dialog {
+    margin: auto;
+    .form-footer {
+        text-align: center;
+    }
+}
+.option-has-delete {
+    .delete {
+        display: none;
+    }
+}
+
+.el-select-dropdown__item.hover {
+    .option-has-delete {
+        .delete {
+            display: block;
+        }
+    }
+}
+
+.tree-info {
+    .el-tree-node__content {
+        position: relative;
+    }
+    .search-container {
+        padding: 16px 16px 4px;
+    }
+    .custom-tree-node {
+        font-size: $--font-size-small;
+        flex: 1;
+        .node-content {
+            width: 76%;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        .point {
+            width: 6px;
+            height: 6px;
+            display: inline-block;
+            vertical-align: middle;
+            border-radius: 999px;
+            margin-right: 4px;
+            &.on-line {
+                background-color: $--color-success;
+            }
+            &.off-line {
+                background-color: $--color-info;
+            }
+        }
+        .status {
+            font-size: $--font-size-small;
+            vertical-align: middle;
+            line-height: 1;
+        }
+    }
+    .tree-wrapper {
+        padding: 0 16px 0 8px;
+    }
+    .single-tree {
+        .el-checkbox {
+            display: none;
+        }
+        .el-tree-node__children {
+            .el-checkbox {
+                display: block;
+            }
+        }
+    }
+}

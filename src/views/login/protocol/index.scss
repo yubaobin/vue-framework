@@ -1,0 +1,40 @@
+.protocol-view {
+	margin: 0;
+	padding: 0;
+	color: #333;
+}
+.center {
+	text-align: center;
+}
+
+h3, h4 {
+	font-weight: normal;
+}
+h4 {
+	text-indent: 1em;
+}
+
+ul, li, ol, p {
+	padding: 0;
+	list-style: none;
+	color: #999;
+	line-height: 1.6
+}
+article {
+	display: block;
+	text-indent: 2em;
+	color: #666;
+	line-height: 1.6
+}
+
+ul > li, p {
+	text-indent: 2em;
+}
+
+li ol {
+	margin-bottom: 20px;
+}
+.bold, .bold * {
+	font-weight: bold;
+	color: #666;
+}
