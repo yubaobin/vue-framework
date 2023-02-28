@@ -58,7 +58,7 @@ export default async (url = '', params = {}, option = {}) => {
     }
     const method = option.method || 'post'
     if (url.indexOf('http') !== 0) {
-        const prefix = option.local ? '' : config.apiPath
+        const prefix = option.local ? 'http://localhost:8081' : config.apiPath
         if (typeof prefix === 'string') {
             url = prefix + url
         }

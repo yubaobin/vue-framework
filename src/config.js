@@ -3,7 +3,7 @@ export default {
     sysName: 'khala',
     // session有效时间 ms
     sessionDuration: 30 * 60 * 1000,
-    routeMode: 'hash',
+    routeMode: 'history',
     // 首页路由名称, 用于处理遭遇各种异常路由时的最终跳转路由
     indexPageName: 'Dashboard',
     setting: {

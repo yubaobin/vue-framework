@@ -11,6 +11,7 @@ module.exports = {
         'no-debugger': 'off',
         'space-before-function-paren': ['error', 'always'],
         'no-case-declarations': 0,
+        camelcase: 'off',
         allowEmptyReject: 0
     },
     parserOptions: {

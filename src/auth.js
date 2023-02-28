@@ -2,7 +2,7 @@ import router from './router'
 import store from './store/index'
 import progress from 'nprogress'
 import 'nprogress/nprogress.css'
-import { addCssByLink, clearTheme } from './utils'
+import { addCssByLink, clearTheme, isEmpty } from './utils'
 import { systemDict } from './plugins/system-dict/index'
 
 function initTheme () {
@@ -37,6 +37,9 @@ const checkPermissionByMock = async (to, from, next) => {
 router.beforeEach((to, from, next) => {
     console.log('即将访问路由：' + (to.name || to.path))
     progress.start()
+    if (isEmpty(history.state.current)) {
+        Object.assign(history.state, { current: from.fullPath })
+    }
     checkPermissionByMock(to, from, next).then(() => {})
 })
 router.afterEach(() => {

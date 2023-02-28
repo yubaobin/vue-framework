@@ -615,7 +615,7 @@ aside a {
   cursor: pointer;
 }
 aside a:hover {
-  color: #20a0ff;
+  color: rgb(32, 160, 255);
 }
 
 .hidden-block {
@@ -658,7 +658,7 @@ aside a:hover {
 }
 .link-type:hover,
 .link-type:focus:hover {
-  color: #20a0ff;
+  color: rgb(32, 160, 255);
 }
 
 .filter-container {
@@ -847,12 +847,12 @@ aside a:hover {
 }
 
 .fixed-header {
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 0;
   z-index: 9;
   width: 100%;
-  width: calc(100% - 190px);
+  left: 0;
   -webkit-transition: width 0.28s;
   transition: width 0.28s;
 }
@@ -1261,7 +1261,7 @@ aside a:hover {
   width: 190px !important;
   background-color: #F3F3F3;
   height: 100%;
-  position: fixed;
+  position: absolute;
   font-size: 0px;
   top: 0;
   bottom: 0;
