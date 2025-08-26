@@ -4,15 +4,13 @@
     </div>
 </template>
 <script>
-export default {
-    name: 'app',
-    created () {
-        this.setTitle()
-    },
-    watch: {
-        $route: function () {
-            this.setTitle()
-        }
+import { provideGlobalConfig } from 'ux-ui'
+import { defineComponent } from '@vue/composition-api'
+export default defineComponent({
+    setup () {
+        provideGlobalConfig({
+            iconPrefix: 'xxxx'
+        })
     }
-}
+})
 </script>

@@ -36,9 +36,12 @@ import './styles/common.scss'
 import './styles/login.scss'
 import './styles/view.scss'
 import './styles/width-img/index.scss'
-
 // 认证
 import './auth'
+import UxUi from 'ux-ui'
+import 'ux-ui/packages/theme-chalk/src/index.scss'
+
+Vue.use(UxUi)
 Vue.config.productionTip = false
 
 directive.init()

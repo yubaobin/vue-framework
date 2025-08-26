@@ -6,14 +6,17 @@ function resolve (dir) {
     return path.join(__dirname, '', dir)
 }
 
-const publicPath = (process.env.NODE_ENV === 'production' ? 'https://qiankun.umijs.org/' : 'http://localhost:8081') + process.env.VUE_APP_publicPath
+// const publicPath = (process.env.NODE_ENV === 'production' ? 'https://qiankun.umijs.org/' : 'http://localhost:8081') + process.env.VUE_APP_publicPath
+
+const publicPath = process.env.VUE_APP_publicPath
 
 module.exports = {
     publicPath: process.env.VUE_APP_publicPath,
     outputDir: process.env.VUE_APP_outputDir,
-    lintOnSave: 'error',
+    lintOnSave: false,
     filenameHashing: isProduction,
     productionSourceMap: !isProduction,
+    transpileDependencies: [/ux-ui/],
     devServer: {
         disableHostCheck: true,
         headers: {

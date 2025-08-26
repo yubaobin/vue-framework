@@ -2,6 +2,7 @@
 node_modules
 /dist
 /VueForKhala/
+/aaaaaccccc/
 VueForKhala.zip
 # local env files
 .env.local
